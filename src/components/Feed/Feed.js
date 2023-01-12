@@ -1,7 +1,10 @@
 import React from 'react'
+import Post from '../Post/Post'
 
 export default function Feed() {
   return (
-    <div>Feed</div>
+    <div>
+        <Post></Post>
+    </div>
   )
 }
