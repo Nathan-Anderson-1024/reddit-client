@@ -8,7 +8,7 @@ export default function Feed() {
   return (
     <div>
         {posts.map((post) => {
-          return <Post post={post}></Post>
+          return <Post post={post} key={post.data.id}></Post>
         })}
     </div>
   )

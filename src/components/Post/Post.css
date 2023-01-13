@@ -2,9 +2,12 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* box-shadow: 0 0.125rem .25rem rgba(47, 46, 46, 0.75); */
-    border: 1px solid gray;
+    box-shadow: 0 0.125rem .25rem rgba(47, 46, 46, 0.75);
     min-height: 50vh;
+    width: 60vw;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    padding-bottom: 1rem;
 }
 .post-header {
     display: flex;
@@ -13,11 +16,33 @@
     align-items: center;
 }
 .post-img {
-    height: 30vh;
+    width: 30vw;
 }
 .post-footer {
     display: flex;
     justify-content: space-evenly;
     border-top: 1px solid gray;
     padding-top: 0.5rem;
+}
+.line-break {
+    border-bottom: 1px solid red;
+    width: 50%;
+}
+.comments {
+    text-decoration: none;
+}
+.upvote {
+    display: flex;
+    justify-content: space-between;
+}
+.upvote-btn {
+    margin-right: 0.25rem;
+}
+.downvote-btn {
+    margin-left: 0.25rem;
+}
+.post-by {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
 }

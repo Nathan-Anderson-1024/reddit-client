@@ -14,18 +14,21 @@ export default function Post({post}) {
       </div>
       <div className='post-body'>
         {/* {post.data.thumbnail == "image" && <img src={post.data.url} className='post-img'></img>} */}
-        {post.data.thumbnail !== "self" && <img src={post.data.url} className='post-img'></img>}
+        {post.data.thumbnail !== "self" && <img src={post.data.url} className='post-img' alt='related to post'></img>}
         <div className='post-footer'>
-          <button>
-            <Icon icon="material-symbols:keyboard-arrow-up" width="30" height="30" color="black" />
-          </button>
-          <h6>{post.data.score}</h6>
-          <button>
-            <Icon icon="material-symbols:keyboard-arrow-down" color="black" width="30" height="30" />
-          </button>
-          <p>Posted by <a href={userLink} target="_blank">{post.data.author}</a></p>
+          <div className='upvote'>
+            <button className='upvote-btn'>
+              <Icon icon="material-symbols:keyboard-arrow-up" width="30" height="30" color="black" />
+            </button>
+            <h6>{post.data.score}</h6>
+            <button className='downvote-btn'>
+              <Icon icon="material-symbols:keyboard-arrow-down" color="black" width="30" height="30" />
+            </button>
+          </div>
+          
+          <p>Posted by <a href={userLink} target="_blank" className='post-by' rel="noreferrer">{post.data.author}</a></p>
           <p>Posted at {postedDate}</p>
-          <a href={comments} target="_blank"><Icon icon="material-symbols:comment-outline" color="black" width="30" height="30" /></a>
+          <a href={comments} target="_blank" className='comments' rel="noreferrer"><Icon icon="material-symbols:comment-outline" color="black" width="30" height="30" />{post.data.num_comments}</a>
           
           
           

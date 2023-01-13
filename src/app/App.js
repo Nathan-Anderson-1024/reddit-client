@@ -3,9 +3,7 @@ import Home from '../components/Home/Home';
 import Navbar from '../components/navbar/Navbar';
 import './App.css';
 import { useDispatch } from 'react-redux';
-import { getPopularData, getPopular, selectPopularData } from '../features/popular/popularSlice';
-import { createAsyncThunk
- } from '@reduxjs/toolkit';
+import { getPopular, selectPopularData } from '../features/popular/popularSlice';
 import { useSelector } from 'react-redux';
 function App() {
   const dispatch = useDispatch();
@@ -14,7 +12,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getPopular())
-  }, [])
+  }, [dispatch])
 
 
   if (isLoading) {
