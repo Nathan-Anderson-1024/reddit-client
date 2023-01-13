@@ -2,7 +2,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0 0.125rem .25rem rgba(47, 46, 46, 0.75);
+    /* box-shadow: 0 0.125rem .25rem rgba(47, 46, 46, 0.75); */
+    border: 1px solid gray;
+    min-height: 50vh;
 }
 .post-header {
     display: flex;
@@ -12,4 +14,10 @@
 }
 .post-img {
     height: 30vh;
+}
+.post-footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid gray;
+    padding-top: 0.5rem;
 }

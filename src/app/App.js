@@ -17,22 +17,6 @@ function App() {
   }, [])
 
 
-  // const getData = createAsyncThunk(
-  //   'popular/getPopularData',
-  //   async (thunkAPI) => {
-  //     const response = await fetch('https://www.reddit.com/r/popular.json')
-  //     const json = await response.json()
-  //     const data = await json.data.children
-  //     return dispatch(getPopularData(data))
-  //   }
-  // )
-
-  // const getData = async () => {
-  //   const response = await fetch('https://www.reddit.com/r/popular.json')
-  //   const json = await response.json()
-  //   const data = await json.data.children
-  //   return dispatch(getPopularData(data))
-  // }
   if (isLoading) {
     return (
       <div className='loading'>
