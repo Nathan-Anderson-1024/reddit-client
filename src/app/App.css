@@ -22,4 +22,8 @@
 .App-link {
   color: #61dafb;
 }
+.loading {
+  display: flex;
+  justify-content: center;
+}
 

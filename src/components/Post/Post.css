@@ -1,0 +1,15 @@
+.post-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0.125rem .25rem rgba(47, 46, 46, 0.75);
+}
+.post-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.post-img {
+    height: 30vh;
+}
