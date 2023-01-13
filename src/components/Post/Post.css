@@ -44,12 +44,26 @@
 }
 .upvote-btn {
     margin-right: 0.25rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 .downvote-btn {
     margin-left: 0.25rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 .post-by {
     text-decoration: none;
     color: blue;
     font-weight: bold;
+}
+.post-header > h1 {
+    width: 90%;
+}
+
+/* Hover buttons */
+.dwn-arrow > path:hover, .up-arrow > path:hover {
+    color: blue;
 }

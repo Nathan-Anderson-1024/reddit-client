@@ -18,11 +18,11 @@ export default function Post({post}) {
         <div className='post-footer'>
           <div className='upvote'>
             <button className='upvote-btn'>
-              <Icon icon="material-symbols:keyboard-arrow-up" width="30" height="30" color="black" />
+              <Icon icon="material-symbols:keyboard-arrow-up" width="48" height="48" color="black" className='up-arrow' />
             </button>
-            <h6>{post.data.score}</h6>
+            <h5>{post.data.score}</h5>
             <button className='downvote-btn'>
-              <Icon icon="material-symbols:keyboard-arrow-down" color="black" width="30" height="30" />
+              <Icon icon="material-symbols:keyboard-arrow-down" color="black" width="48" height="48" className='dwn-arrow' />
             </button>
           </div>
           
