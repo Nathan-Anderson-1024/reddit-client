@@ -13,8 +13,8 @@ export default function Post({post}) {
         <h1>{post.data.title}</h1>
       </div>
       <div className='post-body'>
-        {/* {post.data.thumbnail == "image" && <img src={post.data.url} className='post-img'></img>} */}
-        {post.data.thumbnail !== "self" && <img src={post.data.url} className='post-img' alt='related to post'></img>}
+        {post.data.url.includes('.jpg') && <img src={post.data.url} className='post-img' alt='related to post'></img>}
+        {/* {post.data.thumbnail !== "self" && <img src={post.data.url} className='post-img' alt='related to post'></img>} */}
         <div className='post-footer'>
           <div className='upvote'>
             <button className='upvote-btn'>
@@ -28,7 +28,13 @@ export default function Post({post}) {
           
           <p>Posted by <a href={userLink} target="_blank" className='post-by' rel="noreferrer">{post.data.author}</a></p>
           <p>Posted at {postedDate}</p>
-          <a href={comments} target="_blank" className='comments' rel="noreferrer"><Icon icon="material-symbols:comment-outline" color="black" width="30" height="30" />{post.data.num_comments}</a>
+          <div className='comments-wrapper'>
+            <a href={comments} target="_blank" className='comments' rel="noreferrer">
+              <Icon icon="material-symbols:comment-outline" color="black" width="30" height="30" />
+              {post.data.num_comments}
+            </a>
+          </div>
+          
           
           
           

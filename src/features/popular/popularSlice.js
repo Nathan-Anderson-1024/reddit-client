@@ -43,20 +43,6 @@ export const popularSlice = createSlice({
 })
 
 
-
-// const fetchData = async () => {
-//     const response = await fetch('https://www.reddit.com/r/popular.json')
-//     const json = await response.json();
-//     const posts = json.data.children;
-//     return posts;
-// }
-// export const getPopularFeed = (request) => {
-//     return (dispatch) => {
-//         dispatch(popularSlice.actions.getPopularData(request))
-//         dispatch(getPopularFeed(fetchData()))
-//     }
-// }
-
 export const {getPopularData} = popularSlice.actions
 export const selectPopularData = (state) => state.popular.popularFeed
 export default popularSlice.reducer

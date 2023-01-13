@@ -1,9 +1,8 @@
 .post-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     box-shadow: 0 0.125rem .25rem rgba(47, 46, 46, 0.75);
-    min-height: 50vh;
     width: 60vw;
     margin-bottom: 3rem;
     margin-top: 3rem;
@@ -30,6 +29,14 @@
 }
 .comments {
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-right: 0.25rem;
+    color: black;
+}
+.comments-wrapper {
+    display: flex;
+    align-items: center;
 }
 .upvote {
     display: flex;
