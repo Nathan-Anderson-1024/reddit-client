@@ -17,7 +17,7 @@
 }
 .post-footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     border-top: 1px solid gray;
     padding-top: 0.5rem;
 }

@@ -3,7 +3,10 @@ import './Post.css'
 import { Icon } from '@iconify/react';
 export default function Post({post}) {
   console.log(post)
-  const userLink = `reddit.com/u/${post.data.author}`
+  const userLink = `https://reddit.com/u/${post.data.author}`
+  let postedDate = new Date(post.data.created)
+  postedDate = postedDate.toLocaleTimeString()
+  const comments = `https://reddit.com${post.data.permalink}`
   return (
     <div className='post-wrapper'>
       <div className='post-header'>
@@ -16,11 +19,13 @@ export default function Post({post}) {
           <button>
             <Icon icon="material-symbols:keyboard-arrow-up" width="30" height="30" color="black" />
           </button>
-          <h6>{post.data.ups}</h6>
+          <h6>{post.data.score}</h6>
           <button>
             <Icon icon="material-symbols:keyboard-arrow-down" color="black" width="30" height="30" />
           </button>
-          <p>Posted by <a href={userLink}>{post.data.author}</a></p>
+          <p>Posted by <a href={userLink} target="_blank">{post.data.author}</a></p>
+          <p>Posted at {postedDate}</p>
+          <a href={comments} target="_blank"><Icon icon="material-symbols:comment-outline" color="black" width="30" height="30" /></a>
           
           
           
