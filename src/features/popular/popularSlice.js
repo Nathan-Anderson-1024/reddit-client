@@ -19,9 +19,8 @@ export const popularSlice = createSlice({
         isError: false
     },
     reducers: {
-        getPopularData: (state, action) => {
-            const { children } = action.payload;
-            state.popularFeed.push(children);
+        incrementUpvote: (state, action) => {
+            const { id, upvoteCount } = action.payload;
         }
     },
     extraReducers: {
@@ -43,6 +42,6 @@ export const popularSlice = createSlice({
 })
 
 
-export const {getPopularData} = popularSlice.actions
+export const {incrementUpvote} = popularSlice.actions
 export const selectPopularData = (state) => state.popular.popularFeed
 export default popularSlice.reducer
