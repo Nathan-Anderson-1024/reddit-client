@@ -1,8 +1,9 @@
 import React from 'react'
 import './Post.css'
 import { Icon } from '@iconify/react';
-import { incrementUpvote } from '../../features/popular/popularSlice';
+import { incrementUpvote, decrementUpvote } from '../../features/popular/popularSlice';
 import { useDispatch } from 'react-redux';
+
 export default function Post({post}) {
   console.log(post)
   const userLink = `https://reddit.com/u/${post.data.author}`
@@ -24,11 +25,11 @@ export default function Post({post}) {
         <div className='post-footer'>
           <div className='upvote'>
             {/* USe refs to capture post ID and then pass that post iD to the incrementUpvote reducer */}
-            <button className='upvote-btn'>
+            <button className='upvote-btn' onClick={() => dispatch(incrementUpvote(post.data.id))}>
               <Icon icon="material-symbols:keyboard-arrow-up" width="48" height="48" color="gray" className='up-arrow' />
             </button>
             <h5>{post.data.score}</h5>
-            <button className='downvote-btn'>
+            <button className='downvote-btn' onClick={() => dispatch(decrementUpvote(post.data.id))}>
               <Icon icon="material-symbols:keyboard-arrow-down" color="gray" width="48" height="48" className='dwn-arrow' />
             </button>
           </div>
@@ -48,6 +49,5 @@ export default function Post({post}) {
         </div>
       </div>
     </div>
-    // map across json data from reddit
   )
 }

@@ -5,6 +5,8 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import { getPopular, selectPopularData } from '../features/popular/popularSlice';
 import { useSelector } from 'react-redux';
+
+
 function App() {
   const dispatch = useDispatch();
   const { isLoading, isError } = useSelector(selectPopularData)

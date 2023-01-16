@@ -10,7 +10,7 @@
 }
 .post-header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -75,5 +75,12 @@
 
 /* Hover buttons */
 .dwn-arrow > path:hover, .up-arrow > path:hover, .comment-icon > path:hover {
+    color: blue;
+}
+/* onclick of downvote /upvote buttons */
+.dwn-arrow > path:active, .up-arrow > path:active, .comment-icon > path:active {
+    color: blue;
+}
+.downvote-btn:active {
     color: blue;
 }

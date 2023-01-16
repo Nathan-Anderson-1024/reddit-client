@@ -20,7 +20,20 @@ export const popularSlice = createSlice({
     },
     reducers: {
         incrementUpvote: (state, action) => {
-            const { id, upvoteCount } = action.payload;
+            // Finds the index position that matches the post youre upvoting
+            const indexLoc = state.popularFeed.findIndex((post) => {
+                return post.data.id === action.payload
+            })
+            // adds one to the data.score key for post in index position
+            state.popularFeed[indexLoc].data.score += 1;
+        },
+        decrementUpvote: (state, action) => {
+            // Finds the index position that matches the post youre upvoting
+            const indexLoc = state.popularFeed.findIndex((post) => {
+                return post.data.id === action.payload
+            })
+            // decrements one to the data.score key for post in index position
+            state.popularFeed[indexLoc].data.score -= 1;
         }
     },
     extraReducers: {
@@ -42,6 +55,6 @@ export const popularSlice = createSlice({
 })
 
 
-export const {incrementUpvote} = popularSlice.actions
+export const {incrementUpvote, decrementUpvote} = popularSlice.actions
 export const selectPopularData = (state) => state.popular.popularFeed
 export default popularSlice.reducer
