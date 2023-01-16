@@ -57,4 +57,6 @@ export const popularSlice = createSlice({
 
 export const {incrementUpvote, decrementUpvote} = popularSlice.actions
 export const selectPopularData = (state) => state.popular.popularFeed
+export const selectIsLoading = (state) => state.popular.isLoading
+export const selectIsError = (state) => state.popular.isError
 export default popularSlice.reducer

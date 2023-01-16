@@ -11,18 +11,18 @@ export default function Post({post}) {
   const userLink = `https://reddit.com/u/${post.data.author}`
   let postedDate = new Date(post.data.created)
   postedDate = postedDate.toLocaleTimeString()
-  const comments = `https://reddit.com${post.data.permalink}`
 
   const dispatch = useDispatch();
   
 
 
   return (
-    <Link to={`/posts/${post.data.id}`} className="router-link">
     <div className='post-wrapper'>
+      
       <div className='post-header'>
         <h1>{post.data.title}</h1>
       </div>
+      
       <div className='post-body'>
         {post.data.url.includes('.jpg') && <img src={post.data.url} className='post-img' alt='related to post'></img>}
         {/* {!post.data.thumbnail.includes('.jpg') && <a href={post.data.url} className='post-img' alt='related to post'>Link</a>} */}
@@ -41,12 +41,12 @@ export default function Post({post}) {
           
           <p>Posted by <a href={userLink} target="_blank" className='post-by' rel="noreferrer">{post.data.author}</a></p>
           <p>Posted at {postedDate}</p>
+          <Link to={`/${post.data.id}`} className="router-link comments-wrapper">
           <div className='comments-wrapper'>
-            <a href={comments} target="_blank" className='comments' rel="noreferrer">
-              <Icon icon="material-symbols:comment-outline" color="gray" width="30" height="30" className='comment-icon' />
-              <h5 className='num_comments'>{post.data.num_comments}</h5>
-            </a>
+            <Icon icon="material-symbols:comment-outline" color="gray" width="30" height="30" className='comment-icon' />
+            <h5 className='num_comments'>{post.data.num_comments}</h5>
           </div>
+          </Link>
           
           
           
@@ -55,7 +55,6 @@ export default function Post({post}) {
       </div>
       
     </div>
-    </Link>
     
   )
 }

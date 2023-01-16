@@ -40,7 +40,7 @@ function App() {
       <Routes>
         <Route path='/'>
           <Route index element={<Home></Home>}></Route>
-          <Route path='/posts/:id' element={<PostComments></PostComments>}></Route>
+          <Route path=':id' element={<PostComments></PostComments>}></Route>
         </Route>
       </Routes>
       
