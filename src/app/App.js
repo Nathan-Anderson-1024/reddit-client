@@ -5,6 +5,8 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import { getPopular, selectPopularData } from '../features/popular/popularSlice';
 import { useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import PostComments from '../components/PostComments/PostComments';
 
 
 function App() {
@@ -35,7 +37,13 @@ function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
-      <Home></Home>
+      <Routes>
+        <Route path='/'>
+          <Route index element={<Home></Home>}></Route>
+          <Route path='/posts/:id' element={<PostComments></PostComments>}></Route>
+        </Route>
+      </Routes>
+      
     </div>
   );
 }

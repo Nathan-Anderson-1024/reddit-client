@@ -72,6 +72,10 @@
     margin-left: auto;
     margin-right: auto;
 }
+.router-link {
+    text-decoration: none;
+    color: black;
+}
 
 /* Hover buttons */
 .dwn-arrow > path:hover, .up-arrow > path:hover, .comment-icon > path:hover {

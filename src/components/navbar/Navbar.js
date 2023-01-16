@@ -4,7 +4,7 @@ import './Navbar.css'
 export default function Navbar() {
   return (
     <div className='nav-wrapper'>
-        <h1><span className='lite'>Busted</span>Reddit</h1>
+        <h1>Reddit<span className='lite'>Lite</span></h1>
     </div>
   )
 }

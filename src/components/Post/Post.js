@@ -3,6 +3,8 @@ import './Post.css'
 import { Icon } from '@iconify/react';
 import { incrementUpvote, decrementUpvote } from '../../features/popular/popularSlice';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 export default function Post({post}) {
   console.log(post)
@@ -12,8 +14,11 @@ export default function Post({post}) {
   const comments = `https://reddit.com${post.data.permalink}`
 
   const dispatch = useDispatch();
+  
+
 
   return (
+    <Link to={`/posts/${post.data.id}`} className="router-link">
     <div className='post-wrapper'>
       <div className='post-header'>
         <h1>{post.data.title}</h1>
@@ -48,6 +53,9 @@ export default function Post({post}) {
           
         </div>
       </div>
+      
     </div>
+    </Link>
+    
   )
 }
