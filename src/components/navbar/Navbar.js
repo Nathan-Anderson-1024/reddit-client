@@ -1,10 +1,13 @@
-import React from 'react'
+import BackButton from '../backButton/BackButton'
 import './Navbar.css'
 
 export default function Navbar() {
+  
+
   return (
     <div className='nav-wrapper'>
-        <h1>Reddit<span className='lite'>Lite</span></h1>
+      <BackButton></BackButton>
+      <h1>Reddit<span className='lite'>Lite</span></h1>
     </div>
   )
 }

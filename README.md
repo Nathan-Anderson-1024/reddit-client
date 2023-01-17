@@ -3,11 +3,6 @@ Write unit tests for your components using Jest and Enzyme
 
 Write end-to-end tests for your application
 
-Users can use the application on any device (desktop to mobile)
-
-Users can use the application on any modern browser
-
-
 Users can search the data using terms
 
 Users can filter the data based on categories that are predefined
@@ -16,9 +11,6 @@ Users are delighted with a cohesive design system
 
 Users are delighted with animations and transitions
 
-Users are able to leave an error state
-
-Get 90+ scores on Lighthouse
 
 
 # Getting Started with Create React App

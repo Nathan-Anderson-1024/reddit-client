@@ -1,0 +1,15 @@
+.back-btn-wrapper {
+    position: absolute;
+    left: 1rem;
+}
+.back-btn {
+    height: 48px;
+    width: 48px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.arrow {
+    height: 30px;
+    width: 30px;
+}
