@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 
 
 export default function Post({post}) {
-  console.log(post)
+  const test = post.data.permalink
+  const test2 = test.substring(0, test.length - 1)
+  console.log('https://reddit.com' + test2 + '.json')
   const userLink = `https://reddit.com/u/${post.data.author}`
   let postedDate = new Date(post.data.created)
   postedDate = postedDate.toLocaleTimeString()
