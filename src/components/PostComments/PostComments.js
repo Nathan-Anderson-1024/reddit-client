@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import './PostComments.css'
 import { useSelector } from 'react-redux';
 import { selectPopularData } from '../../features/popular/popularSlice';
@@ -15,16 +15,18 @@ export default function PostComments() {
     const comments = useSelector(selectComments)
     
 
-    const findPost = () => {
+    
+    const findPostInfo = useCallback(() => {
         const postIndex = posts.findIndex((post) => {
             return post.data.id === id
         })
         setSinglePost(posts[postIndex].data)
         return singlePost
-    }
+    }, [id, posts, singlePost])
+
     useEffect(() => {
         try {
-            findPost()
+            findPostInfo()
             console.log('Finding Post')
             //dispatch(getComments('r/Damnthatsinteresting/comments/10do2pl/apes_dont_ask_questions_while_apes_can_learn_sign/'))
             setLoading(false)
@@ -32,7 +34,8 @@ export default function PostComments() {
             console.log(err)
         }
         
-    }, [])
+    }, [findPostInfo])
+    
     const handleInputSubmit = (event) => {
         setText(event)
     }
