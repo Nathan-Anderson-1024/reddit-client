@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import './PostComments.css'
 import { useSelector } from 'react-redux';
 import { selectPopularData } from '../../features/popular/popularSlice';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { addComment, selectComments } from '../../features/comment/commentSlice';
 import { useDispatch } from 'react-redux';
 export default function PostComments() {
@@ -10,10 +10,11 @@ export default function PostComments() {
     const { id } = useParams()
     const dispatch = useDispatch()
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
     const [singlePost, setSinglePost] = useState({})
     const [text, setText] = useState("")
     const comments = useSelector(selectComments)
-    
+    let navigate = useNavigate()
 
     
     const findPostInfo = useCallback(() => {
@@ -31,10 +32,13 @@ export default function PostComments() {
             //dispatch(getComments('r/Damnthatsinteresting/comments/10do2pl/apes_dont_ask_questions_while_apes_can_learn_sign/'))
             setLoading(false)
         } catch (err) {
-            console.log(err)
+            setError(true)
+            console.log(error)
+            navigate('/')
+            
         }
         
-    }, [findPostInfo])
+    }, [findPostInfo, error, navigate])
     
     const handleInputSubmit = (event) => {
         setText(event)

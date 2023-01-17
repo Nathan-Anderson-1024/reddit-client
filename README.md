@@ -3,7 +3,6 @@ Write unit tests for your components using Jest and Enzyme
 
 Write end-to-end tests for your application
 
-Users can use the application on any device (desktop to mobile)
 
 Users can search the data using terms
 

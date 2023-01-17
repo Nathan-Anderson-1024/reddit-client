@@ -7,16 +7,29 @@ import { getPopular, selectPopularData } from '../features/popular/popularSlice'
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import PostComments from '../components/PostComments/PostComments';
-
+import NotFound from '../components/NotFound/NotFound';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const dispatch = useDispatch();
+  let navigate = useNavigate();
   const { isLoading, isError } = useSelector(selectPopularData)
 
 
   useEffect(() => {
+    console.log('in use effect')
     dispatch(getPopular())
-  }, [dispatch])
+    let timeoutID;
+    if (isLoading) {
+      console.log('loading')
+      timeoutID = setTimeout(() => {
+        navigate('/')
+      }, 5000)
+    }
+    
+    return () => clearTimeout(timeoutID)
+    
+  }, [dispatch, isLoading, navigate])
 
 
   if (isLoading) {
@@ -42,6 +55,7 @@ function App() {
           <Route index element={<Home></Home>}></Route>
           <Route path=':id' element={<PostComments></PostComments>}></Route>
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       
     </div>
