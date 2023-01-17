@@ -1,0 +1,19 @@
+.nav-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 0.125rem .25rem rgba(47, 46, 46, 0.75);
+}
+.left-nav {
+    display: flex;
+    justify-content: flex-start;
+    width: 45vw;
+}
+.right-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 45vw;
+}
+.lite {
+    color: blue;
+}
