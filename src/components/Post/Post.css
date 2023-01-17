@@ -88,3 +88,13 @@
 .downvote-btn:active {
     color: blue;
 }
+/* Mobile styling */
+@media only screen and (max-width: 428px) {
+    .upvote {
+        max-width: 25%;
+    }
+    .upvote-btn > svg, .downvote-btn > svg {
+        height: 30px;
+        width: 30px;
+    }
+}
