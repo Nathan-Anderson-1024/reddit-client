@@ -90,11 +90,31 @@
 }
 /* Mobile styling */
 @media only screen and (max-width: 428px) {
+    .post-wrapper {
+        width: 80vw;
+    }
+    .title {
+        font-size: 18px;
+    }
+    .post-img {
+        width: 60vw;
+    }
     .upvote {
         max-width: 25%;
+        flex-direction: column;
     }
     .upvote-btn > svg, .downvote-btn > svg {
         height: 30px;
         width: 30px;
     }
+    .posted-by, .posted-time {
+        max-width: 25%;
+        word-wrap: break-word;
+    }
+}
+@media only screen and (min-width: 429px) and (max-width: 834px) {
+    .post-wrapper {
+        width: 80vw;
+    }
+    
 }

@@ -22,7 +22,7 @@ export default function Post({post}) {
     <div className='post-wrapper'>
       
       <div className='post-header'>
-        <h1>{post.data.title}</h1>
+        <h1 className='title'>{post.data.title}</h1>
       </div>
       
       <div className='post-body'>
@@ -41,8 +41,8 @@ export default function Post({post}) {
             </button>
           </div>
           
-          <p>Posted by <a href={userLink} target="_blank" className='post-by' rel="noreferrer">{post.data.author}</a></p>
-          <p>Posted at {postedDate}</p>
+          <p className='posted-by'>Posted by <a href={userLink} target="_blank" className='post-by' rel="noreferrer">{post.data.author}</a></p>
+          <p className='posted-time'>Posted at {postedDate}</p>
           <Link to={`/${post.data.id}`} className="router-link comments-wrapper">
           <div className='comments-wrapper'>
             <Icon icon="material-symbols:comment-outline" color="gray" width="30" height="30" className='comment-icon' />

@@ -56,7 +56,7 @@ export default function PostComments() {
 
   return (
     <div className='comment-wrapper'>
-        <div>
+        <div className='comment-title'>
           <h1>{singlePost.title}</h1>
           {singlePost.url.includes('.jpg') && <img src={singlePost.url} className='comment-img' alt='related to post'></img>}
           <hr className='break'></hr>
