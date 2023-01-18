@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import PostComments from '../components/PostComments/PostComments';
 import NotFound from '../components/NotFound/NotFound';
 import { useNavigate } from 'react-router-dom';
+import SearchPage from '../components/searchPage/SearchPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ function App() {
           <Route index element={<Home></Home>}></Route>
           <Route path=':id' element={<PostComments></PostComments>}></Route>
         </Route>
+        <Route path='/search/:term' element={<SearchPage />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       
