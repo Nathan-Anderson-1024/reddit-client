@@ -1,0 +1,19 @@
+.search-wrapper {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.search-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.search-icon {
+    height: 30px;
+    width: 30px;
+}
+.search-link {
+    text-decoration: none;
+    color: black;
+}
