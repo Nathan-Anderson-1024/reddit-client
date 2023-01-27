@@ -27,7 +27,27 @@
     align-items: center;
 }
 /* Media queries */
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 600px) {
+    .comment-wrapper {
+        max-width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .comment-title {
+        max-width: 80vw;
+    }
+    .comment-img {
+        max-width: 80vw;
+    }
+    #text-box {
+        max-width: 80vw;
+    }
+    .comment-title h1 {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1280px) {
     .comment-wrapper {
         max-width: 80vw;
         margin-left: auto;

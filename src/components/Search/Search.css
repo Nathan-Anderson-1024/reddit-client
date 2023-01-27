@@ -3,6 +3,7 @@
     right: 1rem;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .search-btn {
     background-color: transparent;
@@ -16,4 +17,9 @@
 .search-link {
     text-decoration: none;
     color: black;
+}
+@media only screen and (max-width: 590px) {
+    .search-wrapper {
+        display: none;
+    }
 }
